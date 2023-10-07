@@ -1,6 +1,6 @@
-from .admin import JSONEditorWidget  # noqa
+from .admin import JSONEditorWidget
 
 try:
     from .version import __version__
 except ImportError:
-    __version__ = 'dev'
+    __version__ = "main"
