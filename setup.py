@@ -22,7 +22,7 @@ if os.path.exists(version_file):
             .group(1)
         )
 else:
-    version = "dev"
+    version = "main"
 
 # allow setup.py to be run from any path
 os.chdir(project_path)
