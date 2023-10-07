@@ -4,8 +4,7 @@
 
 ![Admin Json Editor](example/example.png)
 
-
-Application adds support for editing JSONField in Django Administration via https://github.com/json-editor/json-editor.
+Application adds support for editing JSONField in Django Administration via <https://github.com/json-editor/json-editor>.
 
 ## Quick start
 
@@ -15,17 +14,15 @@ Install application via pip:
 pip install django-admin-json-editor
 ```
 
-Add application to the INSTALLED_APPS settings:
+Add application to the `INSTALLED_APPS` settings:
 
 ```python
 INSTALLED_APPS = [
-    ...
     'django_admin_json_editor',
-    ...
 ]
 ```
 
-Define schema of json field:
+Define schema of JSON field:
 
 ```python
 DATA_SCHEMA = {
@@ -81,4 +78,3 @@ class JSONModelAdmin(admin.ModelAdmin):
         form = super().get_form(request, obj, widgets={'tags': widget}, **kwargs)
         return form
 ```
-
