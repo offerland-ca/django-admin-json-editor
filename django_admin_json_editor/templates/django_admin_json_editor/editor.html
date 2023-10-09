@@ -4,7 +4,6 @@
     let container = document.getElementById("{{ name }}_editor");
     let options = {{ editor_options|safe }};
     let {{ name }}_editor = new JSONEditor(container, options);
-    {{ name }}_editor.load()
     {{ name }}_editor.on('change', function () {
         let errors = {{ name }}_editor.validate();
         if (errors.length) {
@@ -15,10 +14,12 @@
             document.getElementById("id_{{ name }}").value = JSON.stringify(json);
         }
     });
-    {% if data %}
-        let json = {{ data|safe }};
-        {{ name }}_editor.setValue(json);
-    {% endif %}
+    {{ name }}_editor.on('ready',() => {
+        {% if data %}
+            let json = {{ data | safe }};
+            {{ name }}_editor.setValue(json);
+        {% endif %}
+    });
 </script>
 
 <textarea
