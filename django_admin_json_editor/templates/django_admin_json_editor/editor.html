@@ -4,7 +4,7 @@
     let container = document.getElementById("{{ name }}_editor");
     let options = {{ editor_options|safe }};
     let {{ name }}_editor = new JSONEditor(container, options);
-    {{ nam }}_editor.load()
+    {{ name }}_editor.load()
     {{ name }}_editor.on('change', function () {
         let errors = {{ name }}_editor.validate();
         if (errors.length) {
